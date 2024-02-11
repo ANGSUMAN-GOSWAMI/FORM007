@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href=C:\Users\HP\OneDrive\Documents\website tools\ANGSU\stylesheet.css
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>registration form</title>
+    <STyle>
+
+
+* {
+    margin: 0%;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
+}
+body{
+width: 100%;
+height: 100vh;
+background-image:url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") ;
+background-repeat:no-repeat ;
+background-position: center;
+background-attachment: fixed;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+form{
+   color: white;
+width: 450px;
+height: auto;
+padding: 40px;
+border-radius: 18px;
+background-color:rgba(0, 0, 0,0.5);
+font-weight: bold;
+;
+}
+.logo{
+position:fixed;
+top: 0;
+right: 0;
+width: 100%;
+z-index:1000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-weight: bold;
+font-weight :800;
+font-size: 1.5rem;
+color: rgb(0, 255, 213);
+font-family: 'Poppins', sans-serif;
+text-decoration: none;
+cursor: pointer;
+}
+.submit{
+color: rgb(0, 0, 0);
+width: 100px;
+background-color: rgb(0, 221, 255);
+font-size: 1.4rem;
+font-weight: bold;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+border-radius: 10px;
+}
+span{
+    color: chartreuse;
+    transition: 1.2s;
+}
+
+    </STyle>
+  </head>
+  <body>
+    <a href="#" class="logo">👑ANGSU's Page👑</a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    <form name="submit-to-google-sheet">
+      <h2 style="color: rgb(0, 255, 204);">🕉️Registration form of Bajrangdal</h2><br><br>
+     
+      <label>🔸Name:</label>
+      <input type="text" name="Name" /><br /><br />
+      <label>🔸Age:</label>
+      <input type="number" name="Age" /><br /><br />
+      <label>🔸what was the reason for joining:</label><br>
+      <textarea name="what reason for joining" cols="50"></textarea><br /><br />
+      <label>🔸Gender</label><br />
+      <input type="radio" name="Gender" value="Male" /><label>🚹Male.</label>
+      <input type="radio" name="Gender" value="Female" /><label>🚺Female.</label>
+      <input type="radio" name="Gender" value="custom" /><label>⚧️custom.</label
+      ><br /><br />
+      <label>🔸How many years you wanna join this group:</label>
+      <input type="number" name="How many years you wanna join this group"><br><br>
+      <label>🔸Address:</label><br/>
+      <textarea name="Address" id="Address" cols="30"></textarea><br /><br/>
+<input class="submit" type="SUBMIT" name="SUBMIT">
+    <span id="success"></span>
+    </form>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzgA_4qkulDGXUkW6CMfl9FhCDpaWueWebBVI5Tvm0lFQ41SmW2QlIZlgVXUM2aC1LHrQ/exec'
+      const form = document.forms['submit-to-google-sheet']
+    const success = document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+          success.innerHTML="data successfully submited";})
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+    
+  </body>
+</html>
