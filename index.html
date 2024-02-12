@@ -63,7 +63,7 @@ font-family: 'Poppins', sans-serif;
 text-decoration: none;
 cursor: pointer;
 }
-.submit{
+//.submit//
 color: rgb(0, 0, 0);
 width: 100px;
 background-color: rgb(0, 221, 255);
@@ -71,12 +71,30 @@ font-size: 1.4rem;
 font-weight: bold;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 border-radius: 10px;
-}
-span{
+////
+//span//
     color: chartreuse;
     transition: 1.2s;
 }
+.submit-btn {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
+    /* Animation on hover */
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+
+  
+    .submit-btn:active {
+      transform: scale(0.95);
+    }
     </STyle>
   </head>
   <body>
@@ -100,7 +118,9 @@ span{
       <input type="number" name="How many years you wanna join this group"><br><br>
       <label>🔸Address:</label><br/>
       <textarea name="Address" id="Address" cols="20"></textarea><br /><br/>
-<input class="submit" type="SUBMIT" name="SUBMIT">
+
+  <button class="submit-btn" onclick="submitForm()">Submit</button>
+      
     <span id="success"></span>
     </form>
     <script>
@@ -110,9 +130,14 @@ span{
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
+      / Placeholder for your form submission logic
+    function submitForm() {
+      
+      alert('Form submitted!');
+      }
+          //.then(response => {
           success.innerHTML="data successfully submited";})
-          .catch(error => console.error('Error!', error.message))
+          .catch(error => console.error('Error!', error.message))//
       })
     </script>
     
