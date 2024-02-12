@@ -130,10 +130,9 @@ border-radius: 10px;
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      / Placeholder for your form submission logic*/
-    function submitForm() {
-      
-      alert('Form submitted!');
+      .then(response => {
+          success.innerHTML="data successfully submited";})
+          .catch(error => console.error('Error!', error.message))
       }
         
     </script>
