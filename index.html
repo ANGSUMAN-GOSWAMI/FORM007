@@ -131,7 +131,7 @@ span{
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
-          success.innerHTML="data successfully submited";})
+          success.innerHTML="data submitted ✔️";})
           .catch(error => console.error('Error!', error.message))
       })
         
